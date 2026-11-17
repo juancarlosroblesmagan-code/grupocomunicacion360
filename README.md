@@ -74,6 +74,13 @@ El repositorio es público: no se deben subir contraseñas, claves, copias de ba
 7. Crear una copia completa posterior a los últimos cambios, comprobar programación y probar su restauración en un entorno seguro. La copia UpdraftPlus comprobada era del 16 de noviembre a las 21:18 y anterior a cambios posteriores; su restauración no se ha probado.
 8. Completar el inventario de medios antes de proponer ningún borrado. Convertir las etiquetas del blog en filtros solo si se decide crear categorías funcionales.
 
+## Revisión adicional del 17 de noviembre de 2026
+
+- Una auditoría Lighthouse de **Contacto**, en las condiciones concretas de esa ejecución, informó de 88/100 en accesibilidad, 100/100 en buenas prácticas y 100/100 en SEO. No incluyó una medición de rendimiento, no es una auditoría integral ni certifica cumplimiento.
+- Lighthouse señaló contrastes insuficientes, ausencia de una región principal `main`, enlaces sin nombre accesible y elementos de lista fuera de una lista. Se observaron enlaces de redes con el atributo incorrecto `area-label` y varios enlaces de ejemplo con destino `#`; revisar sus destinos reales y la estructura antes de corregirlos.
+- `/politica-de-privacidad/` respondió, pero su contenido observado era la plantilla sugerida de WordPress en inglés. Las rutas `/aviso-legal/` y `/politica-de-cookies/` devolvieron 404; esto no descarta que existan páginas distintas con otras URLs. No se detectaron enlaces legales visibles en el HTML de la muestra revisada. Necesita revisión y redacción adaptadas por quien conozca los datos y tratamientos reales; no se debe deducir cumplimiento legal.
+- La comprobación confirmó de nuevo la ausencia de meta descripción en Blog e Imprenta y de canonical en Blog. No se ha enviado ningún formulario.
+
 ## Copias y material de trabajo
 
 Se guardaron copias locales anteriores a cambios en páginas de servicios, artículos, ajustes del blog, portfolios, estilos, funciones del tema, pie, formularios y schemas. Hay también un inventario parcial de imágenes y paquetes editoriales originales facilitados por el cliente. Estas copias **no equivalen a un respaldo completo restaurable** y pueden contener datos de configuración: conservarlas fuera de repositorios públicos y revisar su contenido antes de compartirlas.
