@@ -47,7 +47,7 @@ El repositorio es público: no se deben subir contraseñas, claves, copias de ba
 - Se añadieron datos estructurados básicos `WebPage` en páginas que carecían de JSON-LD. Las páginas con schemas anteriores los conservaron, salvo la retirada posterior del correo antiguo indicada abajo.
 - Se retiró el correo antiguo de los bloques JSON-LD de nueve páginas: Inicio, Nosotros, Contacto, Diseño Web, Tienda Online, Posicionamiento SEO, Redes Sociales, Marketing Digital y Logotipos y Diseño Gráfico. No se incluyó el correo nuevo en esos bloques para limitar su exposición.
 - En seis páginas de muestra se comprobó que el JSON-LD seguía siendo JSON válido. Esto no sustituye una validación completa de propiedades ni garantiza resultados enriquecidos o posicionamiento.
-- En la última revisión faltaban la meta descripción de Blog e Imprenta y la canonical del blog. Comprobar su estado actual antes de actuar.
+- Se añadieron la meta descripción de Blog e Imprenta y la canonical del blog mediante el tema hijo. En las páginas comprobadas apareció una sola descripción y una sola canonical por página. Si cambia la configuración SEO, comprobar compatibilidad y duplicados.
 
 ### Formularios y correo
 
@@ -68,7 +68,7 @@ El repositorio es público: no se deben subir contraseñas, claves, copias de ba
 1. Confirmar que la cuenta de contacto está operativa y, con autorización para la prueba, enviar un mensaje controlado desde el formulario y confirmar recepción, remitente, respuesta y aviso mostrado. Revisar también spam y configuración de correo del dominio si falla.
 2. Revisar visualmente páginas, menús, formularios y portfolios en móvil y tablet reales o emulados. La prueba de 375 px fue puntual.
 3. Confirmar con el cliente servicios, ubicaciones, teléfonos, precios y condiciones, especialmente en **Planes mensuales** y las páginas restauradas. Revisar coherencia de los datos comerciales de schemas anteriores.
-4. Revisar meta descripciones de Blog e Imprenta, canonical de Blog y validez semántica de todos los schemas.
+4. Validar semánticamente todos los schemas y vigilar duplicados de metadatos si cambia la configuración SEO.
 5. Revisar aviso legal, política de privacidad, cookies, enlaces visibles y mecanismo de consentimiento. La última búsqueda en HTML no encontró enlaces visibles en las páginas examinadas; no constituye una auditoría legal completa.
 6. Medir rendimiento con herramientas y condiciones documentadas; revisar accesibilidad, contraste, teclado, etiquetas y formularios. No hay una auditoría completa ni una puntuación garantizada.
 7. Crear una copia completa posterior a los últimos cambios, comprobar programación y probar su restauración en un entorno seguro. La copia UpdraftPlus comprobada era del 16 de noviembre a las 21:18 y anterior a cambios posteriores; su restauración no se ha probado.
@@ -79,7 +79,9 @@ El repositorio es público: no se deben subir contraseñas, claves, copias de ba
 - Una auditoría Lighthouse de **Contacto**, en las condiciones concretas de esa ejecución, informó de 88/100 en accesibilidad, 100/100 en buenas prácticas y 100/100 en SEO. No incluyó una medición de rendimiento, no es una auditoría integral ni certifica cumplimiento.
 - Lighthouse señaló contrastes insuficientes, ausencia de una región principal `main`, enlaces sin nombre accesible y elementos de lista fuera de una lista. Se observaron enlaces de redes con el atributo incorrecto `area-label` y varios enlaces de ejemplo con destino `#`; revisar sus destinos reales y la estructura antes de corregirlos.
 - `/politica-de-privacidad/` respondió, pero su contenido observado era la plantilla sugerida de WordPress en inglés. Las rutas `/aviso-legal/` y `/politica-de-cookies/` devolvieron 404; esto no descarta que existan páginas distintas con otras URLs. No se detectaron enlaces legales visibles en el HTML de la muestra revisada. Necesita revisión y redacción adaptadas por quien conozca los datos y tratamientos reales; no se debe deducir cumplimiento legal.
-- La comprobación confirmó de nuevo la ausencia de meta descripción en Blog e Imprenta y de canonical en Blog. No se ha enviado ningún formulario.
+- En una revisión inicial faltaban meta descripción en Blog e Imprenta y canonical en Blog; posteriormente se añadieron y comprobaron como se indica arriba. No se ha enviado ningún formulario.
+- Se ajustó el contraste del texto escrito en los campos del formulario de Contacto y se comprobó el color aplicado. Los demás problemas de accesibilidad detectados siguen pendientes y no se ha realizado una auditoría completa posterior.
+- El cliente facilitó el nombre fiscal y domicilio fiscal de la sociedad. Deben contrastarse y completarse los datos legales necesarios antes de publicar textos legales o sustituir otras direcciones; una dirección fiscal no implica necesariamente atención presencial.
 
 ## Copias y material de trabajo
 
