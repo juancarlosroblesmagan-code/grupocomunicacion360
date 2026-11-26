@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Diseño web",
+    "category": "Diseño web",
+    "source_url": "https://grupocomunicacion360.com/diseno-web/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica servicios de diseño web. Para necesidades y presupuesto personalizados, el asistente debe derivar al equipo comercial.",
+    "approved": false
+  },
+  {
+    "title": "Tienda online",
+    "category": "Diseño web",
+    "source_url": "https://grupocomunicacion360.com/tienda-online/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica una página de tienda online. No se deben inventar precios, plazos, plataformas ni funcionalidades no confirmadas.",
+    "approved": false
+  },
+  {
+    "title": "Marketing digital",
+    "category": "Marketing digital",
+    "source_url": "https://grupocomunicacion360.com/marketing-digital/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica servicios de marketing digital. Las recomendaciones deben ser orientativas y una propuesta concreta debe derivarse a contacto humano.",
+    "approved": false
+  },
+  {
+    "title": "SEO y mantenimiento web",
+    "category": "SEO",
+    "source_url": "https://grupocomunicacion360.com/posicionamiento-seo-mantenimiento-web/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica servicios de posicionamiento SEO y mantenimiento web. No se garantizan posiciones, resultados ni plazos.",
+    "approved": false
+  },
+  {
+    "title": "Logotipos y diseño gráfico",
+    "category": "Branding",
+    "source_url": "https://grupocomunicacion360.com/logotipos-y-diseno-grafico/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica servicios de logotipos y diseño gráfico. Las necesidades de identidad y presupuesto se deben valorar con el equipo comercial.",
+    "approved": false
+  },
+  {
+    "title": "Imprenta",
+    "category": "Imprenta",
+    "source_url": "https://grupocomunicacion360.com/imprenta/",
+    "status": "draft",
+    "content": "Grupo Comunicación 360º publica servicios de imprenta. Cantidades, materiales, acabados, tiempos y precio requieren confirmación profesional.",
+    "approved": false
+  },
+  {
+    "title": "Publicidad y soportes",
+    "category": "Publicidad",
+    "source_url": "https://grupocomunicacion360.com/servicios/",
+    "status": "draft",
+    "content": "La página pública de servicios incluye soluciones de publicidad, impresión, rotulación y soportes. El asistente debe enlazar a la página pertinente y pedir contacto para especificaciones.",
+    "approved": false
+  },
+  {
+    "title": "Trabajos y portfolio",
+    "category": "Portfolio",
+    "source_url": "https://grupocomunicacion360.com/trabajos/",
+    "status": "draft",
+    "content": "Los trabajos publicados se consultan en la página de Trabajos. El asistente puede ofrecer este enlace, sin atribuir proyectos no publicados.",
+    "approved": false
+  },
+  {
+    "title": "Contacto y presupuestos",
+    "category": "Contacto",
+    "source_url": "https://grupocomunicacion360.com/contacto/",
+    "status": "draft",
+    "content": "Para presupuestos personalizados, incidencias o necesidades no cubiertas, el asistente debe recomendar contacto o WhatsApp. No solicita información sensible.",
+    "approved": false
+  }
+]

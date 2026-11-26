@@ -1,0 +1,25 @@
+(() => {
+  const config = window.A360_PUBLIC;
+  if (!config) return;
+  const make = (tag, text, className) => { const node = document.createElement(tag); node.textContent = text || ''; if (className) node.className = className; return node; };
+  const root = make('aside', '', 'a360-widget');
+  const open = make('button', 'Hablar con Asistente 360º', 'a360-open'); open.type = 'button'; open.setAttribute('aria-expanded', 'false'); open.setAttribute('aria-label', 'Abrir Asistente 360º');
+  const panel = make('section', '', 'a360-panel'); panel.hidden = true; panel.setAttribute('aria-label', config.name);
+  const header = make('header'); header.append(make('strong', config.name), make('span', 'Asistente virtual'));
+  const close = make('button', 'Cerrar', 'a360-close'); close.type = 'button'; header.append(close);
+  const log = make('div', '', 'a360-log'); log.setAttribute('aria-live', 'polite'); log.setAttribute('role', 'log');
+  const say = (text, type = 'bot') => { const item = make('p', text, `a360-${type}`); log.append(item); log.scrollTop = log.scrollHeight; };
+  say('¡Hola! Soy el Asistente 360º. ¿En qué podemos ayudarte?');
+  const quick = make('div', '', 'a360-quick'); ['Necesito una página web', 'Quiero mejorar mi posicionamiento', 'Necesito publicidad o imprenta', 'Quiero solicitar un presupuesto'].forEach(text => { const button = make('button', text); button.type = 'button'; button.addEventListener('click', () => { input.value = text; input.focus(); }); quick.append(button); });
+  const form = make('form'); const input = document.createElement('textarea'); input.maxLength = 900; input.required = true; input.setAttribute('aria-label', 'Escribe tu consulta'); input.placeholder = 'Escribe tu consulta';
+  const submit = make('button', 'Enviar'); submit.type = 'submit'; form.append(input, submit);
+  const privacy = make('a', 'Privacidad'); privacy.href = config.privacy;
+  const whatsapp = make('a', 'Hablar por WhatsApp', 'a360-whatsapp'); const baseWhatsapp = 'Hola, quisiera información sobre vuestros servicios.'; whatsapp.href = config.whatsapp + '?text=' + encodeURIComponent(baseWhatsapp); whatsapp.target = '_blank'; whatsapp.rel = 'noopener noreferrer';
+  const notice = make('p', 'Asistente virtual con IA. Las respuestas son orientativas. No introduzcas datos sensibles. Al enviar una consulta, esta se procesa mediante OpenAI. ', 'a360-notice'); notice.append(privacy);
+  panel.append(header, log, quick, notice, form, whatsapp); root.append(panel, open); document.body.append(root);
+  let token = ''; let lastUserMessage = '';
+  const toggle = show => { panel.hidden = !show; open.setAttribute('aria-expanded', String(show)); (show ? input : open).focus(); };
+  open.addEventListener('click', () => toggle(panel.hidden)); close.addEventListener('click', () => toggle(false)); panel.addEventListener('keydown', event => { if (event.key === 'Escape') toggle(false); });
+  whatsapp.addEventListener('click', event => { if (!lastUserMessage) return; const summary = `Hola, he consultado al Asistente 360º sobre: ${lastUserMessage}`; if (!window.confirm('¿Quieres incluir un breve resumen de tu consulta en WhatsApp?')) return; whatsapp.href = config.whatsapp + '?text=' + encodeURIComponent(summary); });
+  form.addEventListener('submit', async event => { event.preventDefault(); const message = input.value.trim(); if (!message || submit.disabled) return; lastUserMessage = message; submit.disabled = true; say(message, 'user'); input.value = ''; try { if (!token) { const boot = await fetch(config.bootstrap, { method: 'POST', credentials: 'same-origin' }); const data = await boot.json(); token = data.token || ''; } const response = await fetch(config.bootstrap.replace('/bootstrap', '/chat'), { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', 'X-A360-Nonce': token }, body: JSON.stringify({ message }) }); const data = await response.json(); say(response.ok && typeof data.answer === 'string' ? data.answer : 'No puedo resolverlo ahora. Puedes contactar por WhatsApp.'); } catch (_) { say('Servicio no disponible. Puedes contactar por WhatsApp.'); } finally { submit.disabled = false; input.focus(); } });
+})();

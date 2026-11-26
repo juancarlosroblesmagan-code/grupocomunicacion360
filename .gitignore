@@ -1,0 +1,9 @@
+# Secretos y material local
+**/wp-config.php
+**/*.sql
+**/wordpress/
+**/backups/
+*.log
+
+# Paquetes históricos de desarrollo
+**/*-r[1-9].zip

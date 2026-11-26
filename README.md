@@ -1,12 +1,21 @@
 # Grupo Comunicación 360º — documentación del proyecto
 
-Última actualización documental: 17 de noviembre de 2026.
+Última actualización documental: 26 de noviembre de 2026.
 
 ## Alcance y estado
 
 Este documento recoge el trabajo realizado en la web de [Grupo Comunicación 360º](https://grupocomunicacion360.com/), las decisiones aprobadas y las comprobaciones pendientes. Es un registro de trabajo, **no una copia completa de WordPress ni una garantía de que la web esté terminada**. Algunos detalles proceden del historial de intervención y deben contrastarse antes de cambios posteriores.
 
 El repositorio es público: no se deben subir contraseñas, claves, copias de bases de datos, configuraciones privadas ni datos personales. Tampoco se publica aquí la dirección de correo en texto plano para no facilitar su extracción automática.
+
+## Asistente 360º AI PRO
+
+- Fuente vigente: [`assistant-360/`](assistant-360/), versión `0.2.0-dev-r10`.
+- Paquete de despliegue vigente: [`releases/360-ai-assistant-pro-0.2.0-dev-r10.zip`](releases/360-ai-assistant-pro-0.2.0-dev-r10.zip).
+- Estado y decisiones de producción: [`docs/ESTADO-ASISTENTE-360-2026-11-26.md`](docs/ESTADO-ASISTENTE-360-2026-11-26.md).
+- Registro de QA: [`docs/QA-ASISTENTE-360.md`](docs/QA-ASISTENTE-360.md).
+
+El asistente no contiene claves. La credencial de OpenAI se define exclusivamente en el servidor, fuera del repositorio.
 
 ## Plataforma y criterios
 
