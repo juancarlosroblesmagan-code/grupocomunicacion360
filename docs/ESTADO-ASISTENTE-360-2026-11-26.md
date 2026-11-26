@@ -22,3 +22,10 @@
 - Documentación de configuración, seguridad, despliegue, rollback y QA.
 
 No se incluyen copias completas de WordPress, bases de datos, credenciales, paquetes de revisiones anteriores ni archivos temporales en el repositorio.
+
+## Limpieza y trazabilidad
+
+- Se eliminaron del espacio local las revisiones `r1` a `r9`, el prototipo `0.1.0`, el entorno WordPress local, la exportación SQL y el código legado del asistente.
+- Se conserva exclusivamente el código `r10`, su ZIP, la documentación final y los documentos operativos vigentes.
+- GitHub: `https://github.com/juancarlosroblesmagan-code/grupocomunicacion360`, rama `main`, commit `76295f1`.
+- Las copias históricas generales de la web situadas fuera de esta entrega del asistente no se han eliminado: pueden ser necesarias para restauraciones ajenas al asistente y no se han publicado.
